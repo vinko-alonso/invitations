@@ -7,4 +7,7 @@ export default defineConfig({
   css: {
     transformer: 'postcss',
   },
+  build: {
+    cssMinify: 'esbuild',
+  },
 })
