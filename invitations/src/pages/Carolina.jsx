@@ -10,19 +10,19 @@ import './Carolina.css'
 const QUESTIONS = [
   {
     id: 1,
-    question: '¿Trago favorito de Carolina?',
+    question: '¿Trago favorito de Caro?',
     options: ['Pisco Sour', 'Mojito', 'Aperol', 'Melón con vino'],
     answer: 'Aperol',
   },
   {
     id: 2,
-    question: '¿Mascota favorita de Carolina?',
+    question: '¿Mascota favorita de Caro?',
     options: ['🐶', '🐶 y 😺', '🐱', '🐰'],
     answer: '🐶 y 😺',
   },
   {
     id: 3,
-    question: '¿Como se siente Carolina cuando llega el día de su cumpleaños?',
+    question: '¿Como se siente Caro cuando llega el día de su cumpleaños?',
     options: ['Feliz, esperando el día', 'No quiero que llegue ese día', 'Emocionada, pero con algo de ansiedad', 'Indiferente, es un día más'],
     answer: 'No quiero que llegue ese día',
   },
@@ -98,9 +98,9 @@ export default function Carolina() {
       <Background>
         <div className="carolina-card">
           <p className="carolina-date">🎂 18 de abril · 21:00</p>
-          <h1 className="carolina-title">¡Estás invitada,<br />Carolina!</h1>
+          <h1 className="carolina-title">Reserva la fecha... ¿pero para qué?</h1>
           <p className="carolina-subtitle">
-            Antes de revelar tu invitación, debes superar unas preguntas…
+            Para descubrirlo, tendrás que superar un pequeño reto... ¿Aceptas?
           </p>
           <QuizButton onClick={() => setStep('quiz')}>Aceptar el reto</QuizButton>
         </div>
@@ -121,6 +121,9 @@ export default function Carolina() {
             alt="Invitación"
           />
           <p className="carolina-floating-text">🎉 ¡Te espero el 18 de abril a las 21:00! 🎉</p>
+          <p className="carolina-done-text">
+            ¡Felicidades, has superado el reto! Ahora sabes que estás invitado al cumpleaños de Caro. Será una noche llena de diversión, sorpresas y buena compañía. ¡No faltes!
+          </p>
         </div>
       </Background>
     )
