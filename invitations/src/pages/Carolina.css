@@ -1,0 +1,222 @@
+/* ── Card ─────────────────────────────────────────────── */
+.carolina-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 24px;
+  padding: 2rem 1.5rem;
+  width: calc(100% - 2rem);
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 480px) {
+  .carolina-card {
+    padding: 2.8rem 2.5rem;
+  }
+}
+
+/* ── Typography ──────────────────────────────────────── */
+.carolina-title {
+  font-size: clamp(1.6rem, 6vw, 2.2rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.carolina-date {
+  font-size: clamp(0.8rem, 3vw, 0.9rem);
+  font-weight: 600;
+  color: rgba(255, 215, 0, 0.85);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 0;
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  border-radius: 50px;
+  padding: 0.35rem 1rem;
+}
+
+.carolina-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: clamp(0.9rem, 3.5vw, 1.05rem);
+  margin: 0;
+  line-height: 1.65;
+}
+
+.carolina-progress {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.42);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.carolina-question {
+  font-size: clamp(1.1rem, 4.5vw, 1.4rem);
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* ── Options grid ────────────────────────────────────── */
+.carolina-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.7rem;
+  width: 100%;
+}
+
+@media (min-width: 400px) {
+  .carolina-options {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ── Option button ───────────────────────────────────── */
+.carolina-option {
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-size: clamp(0.85rem, 3.5vw, 0.95rem);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.12s ease;
+  min-height: 52px;
+  text-align: center;
+  line-height: 1.3;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.carolina-option:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.13);
+  border-color: rgba(255, 255, 255, 0.38);
+  transform: translateY(-1px);
+}
+
+.carolina-option:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.carolina-option--option-correct {
+  background: rgba(56, 239, 125, 0.2) !important;
+  border-color: #38ef7d !important;
+  color: #38ef7d !important;
+}
+
+.carolina-option--option-wrong {
+  background: rgba(255, 71, 87, 0.2) !important;
+  border-color: #ff4757 !important;
+  color: #ff4757 !important;
+  animation: optShake 0.45s ease-in-out;
+}
+
+.carolina-option:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* ── Feedback message ────────────────────────────────── */
+.carolina-feedback {
+  font-size: 0.88rem;
+  color: #ff4757;
+  min-height: 1.25em;
+  opacity: 0;
+  transition: opacity 0.2s;
+  margin: 0;
+}
+
+.carolina-feedback--visible {
+  opacity: 1;
+  animation: popIn 0.25s ease;
+}
+
+/* ── Done screen ─────────────────────────────────────── */
+.carolina-done {
+  max-width: 560px;
+  gap: 1.8rem;
+}
+
+.carolina-invitation-img {
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
+}
+
+.carolina-floating-text {
+  font-size: clamp(1.1rem, 4.5vw, 1.5rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  animation: float 3.5s ease-in-out infinite;
+  text-shadow:
+    0 0 30px rgba(255, 215, 0, 0.9),
+    0 0 70px rgba(255, 140, 0, 0.5);
+  text-align: center;
+  line-height: 1.35;
+}
+
+/* ── Keyframes ───────────────────────────────────────── */
+@keyframes optShake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-9px);
+  }
+
+  40% {
+    transform: translateX(9px);
+  }
+
+  60% {
+    transform: translateX(-6px);
+  }
+
+  80% {
+    transform: translateX(6px);
+  }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1.5deg) scale(1);
+  }
+
+  33% {
+    transform: translateY(-18px) rotate(1.5deg) scale(1.04);
+  }
+
+  66% {
+    transform: translateY(-10px) rotate(-0.5deg) scale(1.02);
+  }
+}

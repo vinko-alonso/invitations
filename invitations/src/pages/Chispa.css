@@ -1,0 +1,189 @@
+/* ── Card ─────────────────────────────────────────────── */
+.chispa-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 24px;
+  padding: 2rem 1.5rem;
+  width: calc(100% - 2rem);
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 520px) {
+  .chispa-card {
+    padding: 2.8rem 2.5rem;
+  }
+}
+
+/* ── Title ───────────────────────────────────────────── */
+.chispa-title {
+  font-size: clamp(1.3rem, 5.5vw, 1.8rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.chispa-date {
+  font-size: clamp(0.8rem, 3vw, 0.9rem);
+  font-weight: 600;
+  color: rgba(255, 215, 0, 0.85);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 0;
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  border-radius: 50px;
+  padding: 0.35rem 1rem;
+}
+
+.chispa-subtitle {
+  font-size: clamp(0.85rem, 3.5vw, 1rem);
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Animal grid ─────────────────────────────────────── */
+.chispa-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+}
+
+@media (min-width: 400px) {
+  .chispa-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ── Animal button ───────────────────────────────────── */
+.chispa-animal-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.9rem 0.5rem;
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s, transform 0.12s;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.chispa-animal-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.38);
+  transform: translateY(-3px) scale(1.05);
+}
+
+.chispa-animal-btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.chispa-animal-emoji {
+  font-size: clamp(1.8rem, 7vw, 2.4rem);
+  line-height: 1;
+}
+
+.chispa-animal-label {
+  font-size: clamp(0.7rem, 3vw, 0.82rem);
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+}
+
+/* ── Result screen ───────────────────────────────────── */
+.chispa-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+  width: 100%;
+  animation: fadeSlideUp 0.4s ease;
+}
+
+.chispa-result-img {
+  max-width: min(280px, 80vw);
+  border-radius: 18px;
+  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.5);
+}
+
+.chispa-result-text {
+  font-size: clamp(1rem, 4.5vw, 1.25rem);
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  line-height: 1.4;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.chispa-floating-text {
+  font-size: clamp(1rem, 4vw, 1.35rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  animation: float 3.5s ease-in-out infinite;
+  text-shadow:
+    0 0 30px rgba(255, 215, 0, 0.9),
+    0 0 70px rgba(255, 140, 0, 0.5);
+  text-align: center;
+  line-height: 1.35;
+}
+
+.chispa-back-btn {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 50px;
+  padding: 0.65rem 1.6rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.18s, color 0.18s;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.chispa-back-btn:hover {
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #fff;
+}
+
+/* ── Keyframes ───────────────────────────────────────── */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1.5deg) scale(1);
+  }
+
+  33% {
+    transform: translateY(-18px) rotate(1.5deg) scale(1.04);
+  }
+
+  66% {
+    transform: translateY(-10px) rotate(-0.5deg) scale(1.02);
+  }
+}
