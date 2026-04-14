@@ -26,6 +26,7 @@ export default function Chispa() {
       <div className="chispa-card">
         {selected ? (
           <div className="chispa-result">
+            <p className="chispa-floating-title">🎂 Cumpleaños Therian 🎂</p>
             <img
               className="chispa-result-img"
               src={animal.image}
@@ -33,6 +34,7 @@ export default function Chispa() {
             />
             <p className="chispa-result-text">{animal.text}</p>
             <p className="chispa-floating-text">🎉 ¡Te espero el 17 de abril a las 18:00! 🎉</p>
+            <p className="chispa-clarification">Te esperamos como un therian más 🐾</p>
             <button
               className="chispa-back-btn"
               onClick={() => setSelected(null)}
@@ -42,6 +44,7 @@ export default function Chispa() {
           </div>
         ) : (
           <>
+            <p className="chispa-floating-title">🎂 Cumpleaños Therian 🎂</p>
             <p className="chispa-subtitle">¿Que therian te sientes hoy?</p>
             <div className="chispa-grid">
               {ANIMALS.map((a) => (
@@ -55,6 +58,7 @@ export default function Chispa() {
                 </button>
               ))}
             </div>
+            <p className="chispa-clarification">Te esperamos como un therian más 🐾</p>
           </>
         )}
       </div>
